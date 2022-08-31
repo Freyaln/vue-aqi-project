@@ -14,7 +14,7 @@ export default {
 <script setup>
 import axios from 'axios'
 import Buttons from "../Buttons/Buttons.vue";
-import {homepageButtons} from '../../Datas/Datas';
+import {homepageFilterGazButtons, homepageFilterHealthyButtons} from '../../Datas/Datas';
 
 async function fetchAqi() {
 
@@ -34,7 +34,14 @@ fetchAqi()
         <h3 class="main__content__topLeft__description">Air Pollution: Real-time Air Quality Index (AQI)</h3>
       </div>
       <div class="main__content__bottomLeft__block">
-        <Buttons :values=homepageButtons />
+        <div v-for="(value, index) in homepageFilterGazButtons" :key="index" :id="index" class="main__content__bottomLeft__block__btn__filter-gaz">
+          <p class="main__content__bottomLeft__block__btn__filter-gaz__text">{{value}}</p>
+        </div>
+      </div>
+      <div class="main__content__bottomCenter__block">
+        <div v-for="(value, index) in homepageFilterHealthyButtons" :key="index" :id="index" class="main__content__bottomLeft__block__btn__filter-healthy">
+        <p class="main__content__bottomLeft__block__btn__filter-healthy__text">{{value}}</p>
+      </div>
       </div>
     </section>
     <WorldMap/>
@@ -74,12 +81,66 @@ fetchAqi()
         }
       }
       .main__content__bottomLeft__block {
+        position: absolute;
         display: flex;
-        justify-content: flex-end;
-        width: 650px;
-        height: 400px;
-        bottom: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 4rem;
+        height: 12rem;
+        bottom: 5rem;
+        left: 5rem;
+        gap: 0.75rem;
+        border-radius: 35%;
+        background-color: #FFFFFF;
         z-index: 1;
+
+        .main__content__bottomLeft__block__btn__filter-gaz {
+          justify-content: center;
+          align-self: center;
+          height: 1.5rem;
+          width: 1.5rem;
+          border: 1px black solid;
+          background-color: lightgray;
+
+          .main__content__bottomLeft__block__btn__filter-gaz__text {
+            position: relative;
+            bottom: 0.75rem;
+              font-size: 1rem;
+              font-weight: bold;
+              width: 20rem;
+              margin-left: 5rem;
+            }
+        }
+      }
+      .main__content__bottomCenter__block {
+        position: absolute;
+        display: flex;
+        width: 40rem;
+        height: 2.5rem;
+        gap: 6rem;
+        bottom: 5rem;
+        left: 50%;
+        z-index: 1;
+
+        .main__content__bottomLeft__block__btn__filter-healthy {
+          justify-content: center;
+          align-self: flex-end;
+          height: 1rem;
+          width: 1rem;
+          border-radius: 50%;
+          border: 1px black solid;
+          background-color: lightgray;
+
+          .main__content__bottomLeft__block__btn__filter-healthy__text {
+            position: relative;
+            bottom: 0.75rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            width: 10rem;
+            margin-left: 1.5rem;
+          }
+        }
       }
     }
   }

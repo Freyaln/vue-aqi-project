@@ -1,1 +1,2 @@
-export const homepageButtons = ['PM 2.5', 'PM 10', 'O3', 'UVI'];
+export const homepageFilterGazButtons = ['Fine Particulate Matter / PM 2.5', 'Respirable Particulate Matter / PM 10', 'Ozone / O3', 'Ultraviolet Index / UVI'];
+export const homepageFilterHealthyButtons = ['Good', 'Moderate', 'Unhealthy', 'Very Unhealthy', 'Hazardous']

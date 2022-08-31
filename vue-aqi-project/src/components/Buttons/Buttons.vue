@@ -1,9 +1,9 @@
 <template>
-  <ul>
-    <li v-for="(value, index) in values" :key="index">
-      {{value}}
-    </li>
-  </ul>
+  <div>
+    <button v-for="(value, index) in values" :key="index" >
+      <p>{{value}}</p>
+    </button>
+  </div>
 </template>
 
 <script>
@@ -38,6 +38,6 @@ const props = defineProps({
 
 </script>
 
-<style>
+<style lang="scss">
 
 </style>

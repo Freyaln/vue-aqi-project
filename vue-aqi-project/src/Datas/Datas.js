@@ -1,0 +1,1 @@
+export const homepageButtons = ['PM 2.5', 'PM 10', 'O3', 'UVI'];

@@ -1,0 +1,14 @@
+<!--var names = {-->
+<!--pm25: "PM<sub>2.5</sub>",-->
+<!--pm10: "PM<sub>10</sub>",-->
+<!--o3: "Ozone",-->
+<!--no2: "Nitrogen Dioxide",-->
+<!--so2: "Sulphur Dioxide",-->
+<!--co: "Carbon Monoxyde",-->
+<!--t: "Temperature",-->
+<!--w: "Wind",-->
+<!--r: "Rain (precipitation)",-->
+<!--h: "Relative Humidity",-->
+<!--d: "Dew",-->
+<!--p: "Atmostpheric Pressure",-->
+<!--};-->
